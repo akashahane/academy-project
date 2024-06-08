@@ -1,0 +1,44 @@
+<% layout("layouts/boilerplate") %>
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Edit this course</h3>
+    <form
+      class="needs-validation"
+      action="/courses/<%= course._id %>?_method=PUT"
+      method="post"
+      novalidate
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          class="form-control"
+          name="course[title]"
+          value="<%= course.title %>"
+          required
+        />
+        <div class="valid-feedback">Looks Good!</div>
+        <div class="invalid-feedback">Title is required!</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" name="course[description]" required>
+<%= course.description %></textarea
+        >
+        <div class="valid-feedback">Looks Good!</div>
+        <div class="invalid-feedback">Description is required!</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="requirement" class="form-label">Requirement</label>
+        <textarea class="form-control" name="course[requirement]" required>
+<%= course.requirement %></textarea
+        >
+        <div class="valid-feedback">Looks Good!</div>
+        <div class="invalid-feedback">Requirements are required!</div>
+      </div>
+      <button class="btn save-btn">Save</button>
+    </form>
+  </div>
+</div>
+<script src="/js/script.js"></script>

@@ -1,0 +1,43 @@
+<% layout("layouts/boilerplate") %>
+
+<style>
+  .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  h3 {
+    margin-bottom: 1.2rem;
+    margin-top: 1.2rem;
+  }
+</style>
+
+<body>
+  <h3>All Courses</h3>
+  <!-- <form method="GET" action="courses/new">
+    <button>Add New Course</button>
+  </form> -->
+
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1">
+    <% for (let course of courses){ %>
+    <div class="card col course-card">
+      <div class="card-body">
+        <h5 class="card-title"><%= course.title %></h5>
+        <p class="card-text"><%= course.description %></p>
+        <a href="/courses/<%= course._id %>" class="card-link"
+          ><i class="fa-solid fa-arrow-right"></i
+        ></a>
+      </div>
+    </div>
+    <% } %>
+  </div>
+
+  <!-- <ul>
+    <% for (let course of courses){ %>
+    <li><a href="/courses/<%= course._id %>"><%= course.title %></a></li>
+    <% } %>
+  </ul> -->
+</body>
