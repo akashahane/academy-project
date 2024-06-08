@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const Course = require("../Academy Website/models/course");
+const Course = require("./models/course");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
@@ -148,5 +148,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(8080, () => {
-  console.log("listening to port 8080");
+  console.log(`listening to port http://localhost${8080}`);
 });
